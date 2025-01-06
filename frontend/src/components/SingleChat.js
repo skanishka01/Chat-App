@@ -10,8 +10,8 @@ import './styles.css';
 import ScrollableChat from './ScrollableChat';
 import Lottie from 'react-lottie'
 import animationData from "../animations/typing.json";
-
 import io from 'socket.io-client'
+
 const ENDPOINT = "http://localhost:5000";
 var socket,selectedChatCompare;
 
@@ -177,7 +177,7 @@ const SingleChat = ({fetchAgain , setFetchAgain}) => {
                     icon={<ArrowBackIcon />}
                     onClick={() => setSelectedChat("")}
                 />
-                {!selectedChat.isGroupChat ?(
+                {messages && !selectedChat.isGroupChat ?(
                     <>
                     {getSender(user,selectedChat.users)}
                     <ProfileModel user={getSenderFull(user,selectedChat.users)}/>
